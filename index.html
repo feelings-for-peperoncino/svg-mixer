@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Mixer</title>
+    <style>
+        #svg-preview {
+            border: 1px solid #ccc;
+            width: 300px;
+            height: 300px;
+            margin-top: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 20px;
+        }
+
+        /* この例では、シンプルなデザインのため、最低限のスタイルを適用します。 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, button {
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#svg-preview {
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+
+  <h1>SVG Image and Text Overlay Generator</h1>
+
+  <div>
+      <label for="text">Text:</label>
+      <input type="text" id="text" placeholder="Enter your text" oninput="generateSVG()">
+  </div>
+  
+  <div>
+      <label for="fontWeight">Font Weight:</label>
+      <input type="number" id="fontWeight" placeholder="e.g., 400, 700" oninput="generateSVG()">
+  </div>
+  
+  <div>
+      <label for="fontSize">Font Size (px):</label>
+      <input type="number" id="fontSize" placeholder="e.g., 16" oninput="generateSVG()">
+  </div>
+  
+  <div>
+      <label for="color">Text Color:</label>
+      <input type="text" id="color" placeholder="#rrggbb" oninput="generateSVG()">
+  </div>
+  
+  <div>
+      <label for="x">Position X:</label>
+      <input type="number" id="x" placeholder="X coordinate" oninput="generateSVG()">
+  </div>
+  
+  <div>
+      <label for="y">Position Y:</label>
+      <input type="number" id="y" placeholder="Y coordinate" oninput="generateSVG()">
+  </div>
+  
+  <div>
+      <label for="textAnchor">Text Anchor (middle):</label>
+      <input type="checkbox" id="textAnchor" onclick="generateSVG()">
+  </div>
+  
+  <div>
+      <label for="dominantBaseline">Dominant Baseline (middle):</label>
+      <input type="checkbox" id="dominantBaseline" onclick="generateSVG()">
+  </div>
+  
+  <div id="svg-preview"></div>
+  
+  <textarea id="output" readonly></textarea>
+  
+
+  <script src="js/script.js"></script>
+</body>
+</html>
