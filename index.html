@@ -59,50 +59,63 @@ button:hover {
   <h1>SVG Image and Text Overlay Generator</h1>
 
   <div>
+      <label for="imageUrl">Image URL:</label>
+      <input type="text" id="imageUrl" placeholder="Enter image URL" oninput="generateSVG()">
+  </div>
+
+  <div>
+      <label for="width">Image Width:</label>
+      <select id="width" onchange="generateSVG()">
+          <option value="100%">100%</option>
+          <option value="500px">500px</option>
+          <option value="300px">300px</option>
+      </select>
+  </div>
+
+  <div>
       <label for="text">Text:</label>
       <input type="text" id="text" placeholder="Enter your text" oninput="generateSVG()">
   </div>
-  
+
   <div>
       <label for="fontWeight">Font Weight:</label>
       <input type="number" id="fontWeight" placeholder="e.g., 400, 700" oninput="generateSVG()">
   </div>
-  
+
   <div>
       <label for="fontSize">Font Size (px):</label>
       <input type="number" id="fontSize" placeholder="e.g., 16" oninput="generateSVG()">
   </div>
-  
+
   <div>
       <label for="color">Text Color:</label>
       <input type="text" id="color" placeholder="#rrggbb" oninput="generateSVG()">
   </div>
-  
+
   <div>
       <label for="x">Position X:</label>
       <input type="number" id="x" placeholder="X coordinate" oninput="generateSVG()">
   </div>
-  
+
   <div>
       <label for="y">Position Y:</label>
       <input type="number" id="y" placeholder="Y coordinate" oninput="generateSVG()">
   </div>
-  
+
   <div>
       <label for="textAnchor">Text Anchor (middle):</label>
       <input type="checkbox" id="textAnchor" onclick="generateSVG()">
   </div>
-  
+
   <div>
       <label for="dominantBaseline">Dominant Baseline (middle):</label>
       <input type="checkbox" id="dominantBaseline" onclick="generateSVG()">
   </div>
-  
+
   <div id="svg-preview"></div>
-  
+
   <textarea id="output" readonly></textarea>
   
-
   <script src="js/script.js"></script>
 </body>
 </html>
